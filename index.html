@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balkes Maket - El Yapımı Hobi Maketleri</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#3E2723',      /* Deep Earthy Brown */
+                            primary: '#5D4037',   /* Medium Brown */
+                            secondary: '#8D6E63', /* Lighter Brown */
+                            beige: '#F5F5DC',     /* Classic Beige */
+                            cream: '#FAF8F5',     /* Off-white background */
+                            accent: '#A1887F',    /* Muted Accent */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        body: ['"Merriweather"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #FAF8F5;
+            color: #3E2723;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="bg-brand-cream border-b border-brand-secondary/20 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="block">
+                        <img src="assets/balkes-maket-1.png" alt="Balkes Maket Logo" class="h-20 w-auto object-contain">
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden absolute right-4 top-8 text-brand-dark hover:text-brand-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Menu Items -->
+                <nav id="nav-menu" class="hidden lg:flex flex-wrap justify-center gap-x-6 gap-y-2 text-center w-full lg:w-auto">
+                    <a href="#" class="text-brand-dark hover:text-brand-secondary font-heading font-medium text-lg transition-colors">Anasayfa</a>
+                    <a href="#" class="text-brand-dark hover:text-brand-secondary font-heading font-medium text-lg transition-colors">Gemi Maketleri</a>
+                    <a href="#" class="text-brand-dark hover:text-brand-secondary font-heading font-medium text-lg transition-colors">Araç Maketleri</a>
+                    <a href="#" class="text-brand-dark hover:text-brand-secondary font-heading font-medium text-lg transition-colors">Ev Maketleri</a>
+                    <a href="#" class="text-brand-dark hover:text-brand-secondary font-heading font-medium text-lg transition-colors">Diğer</a>
+                    <a href="#" class="text-brand-dark hover:text-brand-secondary font-heading font-medium text-lg transition-colors">Üretim Aşamaları</a>
+                    <a href="#" class="text-brand-dark hover:text-brand-secondary font-heading font-medium text-lg transition-colors">Hakkımda</a>
+                    <a href="#" class="text-brand-dark hover:text-brand-secondary font-heading font-medium text-lg transition-colors">İletişim</a>
+                </nav>
+            </div>
+
+            <!-- Mobile Menu Dropdown (Hidden by default) -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 flex flex-col space-y-3 pb-4 border-t border-brand-secondary/20 pt-4">
+                <a href="#" class="block text-brand-dark hover:text-brand-secondary font-heading text-lg text-center">Anasayfa</a>
+                <a href="#" class="block text-brand-dark hover:text-brand-secondary font-heading text-lg text-center">Gemi Maketleri</a>
+                <a href="#" class="block text-brand-dark hover:text-brand-secondary font-heading text-lg text-center">Araç Maketleri</a>
+                <a href="#" class="block text-brand-dark hover:text-brand-secondary font-heading text-lg text-center">Ev Maketleri</a>
+                <a href="#" class="block text-brand-dark hover:text-brand-secondary font-heading text-lg text-center">Diğer</a>
+                <a href="#" class="block text-brand-dark hover:text-brand-secondary font-heading text-lg text-center">Üretim Aşamaları</a>
+                <a href="#" class="block text-brand-dark hover:text-brand-secondary font-heading text-lg text-center">Hakkımda</a>
+                <a href="#" class="block text-brand-dark hover:text-brand-secondary font-heading text-lg text-center">İletişim</a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Simple Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Hero Section / Slider -->
+        <section class="relative w-full h-[500px] lg:h-[600px] overflow-hidden bg-brand-beige group">
+            <!-- Slides Container -->
+            <div id="slider-container" class="w-full h-full relative">
+
+                <!-- Slide 1 -->
+                <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 opacity-100 slide-item bg-brand-dark flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black/40"></div> <!-- Overlay -->
+                    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                        <span class="block text-brand-beige text-lg md:text-xl tracking-widest uppercase mb-4 font-body">Balkes Maket</span>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl text-brand-beige font-heading font-bold mb-6">
+                            El Yapımı Gemi Maketleri
+                        </h1>
+                        <p class="text-brand-cream/90 text-lg md:text-xl max-w-2xl mx-auto font-body font-light">
+                            Geleneksel tekniklerle üretilmiş, her detayı özenle işlenmiş nadide parçalar.
+                        </p>
+                        <a href="#" class="inline-block mt-8 px-8 py-3 bg-brand-accent hover:bg-brand-secondary text-brand-cream font-heading text-lg transition-colors border border-brand-cream/20">
+                            Koleksiyonu Keşfet
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 opacity-0 slide-item bg-brand-primary flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black/30"></div>
+                    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                        <span class="block text-brand-beige text-lg md:text-xl tracking-widest uppercase mb-4 font-body">Özel Tasarım</span>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl text-brand-beige font-heading font-bold mb-6">
+                            Araç & Ev Maketleri
+                        </h1>
+                        <p class="text-brand-cream/90 text-lg md:text-xl max-w-2xl mx-auto font-body font-light">
+                            Hayalinizdeki yapıları ve araçları minyatür dünyasında gerçeğe dönüştürüyoruz.
+                        </p>
+                        <a href="#" class="inline-block mt-8 px-8 py-3 bg-brand-accent hover:bg-brand-secondary text-brand-cream font-heading text-lg transition-colors border border-brand-cream/20">
+                            Projeleri İncele
+                        </a>
+                    </div>
+                </div>
+
+                 <!-- Slide 3 -->
+                 <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 opacity-0 slide-item bg-brand-secondary flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black/30"></div>
+                    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                        <span class="block text-brand-beige text-lg md:text-xl tracking-widest uppercase mb-4 font-body">Sanat & Hobi</span>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl text-brand-beige font-heading font-bold mb-6">
+                            Doğal ve Organik Dokunuşlar
+                        </h1>
+                        <p class="text-brand-cream/90 text-lg md:text-xl max-w-2xl mx-auto font-body font-light">
+                            Ahşabın sıcaklığını ve el işçiliğinin değerini hissedin.
+                        </p>
+                        <a href="#" class="inline-block mt-8 px-8 py-3 bg-brand-accent hover:bg-brand-secondary text-brand-cream font-heading text-lg transition-colors border border-brand-cream/20">
+                            İletişime Geç
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Slider Controls -->
+            <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-brand-beige hover:bg-white/10 rounded-full transition-colors z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-brand-beige hover:bg-white/10 rounded-full transition-colors z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </section>
+
+        <!-- Script for Slider Logic -->
+        <script>
+            const slides = document.querySelectorAll('.slide-item');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0');
+                    if (i === index) {
+                        slide.classList.remove('opacity-0');
+                        slide.classList.add('opacity-100');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            document.getElementById('next-slide').addEventListener('click', () => {
+                nextSlide();
+                resetTimer();
+            });
+
+            document.getElementById('prev-slide').addEventListener('click', () => {
+                prevSlide();
+                resetTimer();
+            });
+
+            // Auto advance
+            let slideInterval = setInterval(nextSlide, 5000);
+
+            function resetTimer() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+        </script>
+
+        <!-- Featured Projects Section -->
+        <section class="py-16 md:py-24 bg-brand-cream">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-brand-primary uppercase tracking-widest text-sm font-body mb-2 block">Portfolyo</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl text-brand-dark font-heading font-bold">Öne Çıkan Projeler</h2>
+                    <div class="w-24 h-1 bg-brand-accent mx-auto mt-6"></div>
+                </div>
+
+                <!-- 3x3 Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project 1 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-brand-secondary/20 mb-4">
+                            <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-brand-primary/0 transition-colors duration-500"></div>
+                            <!-- Placeholder Icon/Text -->
+                            <div class="absolute inset-0 flex items-center justify-center text-brand-secondary/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl text-brand-dark font-heading font-semibold text-center group-hover:text-brand-primary transition-colors">Osmanlı Kalyonu</h3>
+                        <p class="text-brand-secondary text-sm text-center font-body mt-1">Gemi Maketleri</p>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-brand-secondary/20 mb-4">
+                            <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-brand-primary/0 transition-colors duration-500"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-brand-secondary/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl text-brand-dark font-heading font-semibold text-center group-hover:text-brand-primary transition-colors">Klasik Otomobil</h3>
+                        <p class="text-brand-secondary text-sm text-center font-body mt-1">Araç Maketleri</p>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-brand-secondary/20 mb-4">
+                            <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-brand-primary/0 transition-colors duration-500"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-brand-secondary/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl text-brand-dark font-heading font-semibold text-center group-hover:text-brand-primary transition-colors">Köy Evi</h3>
+                        <p class="text-brand-secondary text-sm text-center font-body mt-1">Ev Maketleri</p>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-brand-secondary/20 mb-4">
+                            <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-brand-primary/0 transition-colors duration-500"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-brand-secondary/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl text-brand-dark font-heading font-semibold text-center group-hover:text-brand-primary transition-colors">Balıkçı Teknesi</h3>
+                        <p class="text-brand-secondary text-sm text-center font-body mt-1">Gemi Maketleri</p>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-brand-secondary/20 mb-4">
+                            <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-brand-primary/0 transition-colors duration-500"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-brand-secondary/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl text-brand-dark font-heading font-semibold text-center group-hover:text-brand-primary transition-colors">Vosvos</h3>
+                        <p class="text-brand-secondary text-sm text-center font-body mt-1">Araç Maketleri</p>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-brand-secondary/20 mb-4">
+                            <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-brand-primary/0 transition-colors duration-500"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-brand-secondary/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl text-brand-dark font-heading font-semibold text-center group-hover:text-brand-primary transition-colors">Taş Konak</h3>
+                        <p class="text-brand-secondary text-sm text-center font-body mt-1">Ev Maketleri</p>
+                    </div>
+
+                    <!-- Project 7 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-brand-secondary/20 mb-4">
+                            <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-brand-primary/0 transition-colors duration-500"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-brand-secondary/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl text-brand-dark font-heading font-semibold text-center group-hover:text-brand-primary transition-colors">Yat Modeli</h3>
+                        <p class="text-brand-secondary text-sm text-center font-body mt-1">Gemi Maketleri</p>
+                    </div>
+
+                    <!-- Project 8 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-brand-secondary/20 mb-4">
+                            <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-brand-primary/0 transition-colors duration-500"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-brand-secondary/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl text-brand-dark font-heading font-semibold text-center group-hover:text-brand-primary transition-colors">Motosiklet</h3>
+                        <p class="text-brand-secondary text-sm text-center font-body mt-1">Araç Maketleri</p>
+                    </div>
+
+                    <!-- Project 9 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-brand-secondary/20 mb-4">
+                            <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-brand-primary/0 transition-colors duration-500"></div>
+                            <div class="absolute inset-0 flex items-center justify-center text-brand-secondary/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl text-brand-dark font-heading font-semibold text-center group-hover:text-brand-primary transition-colors">Deniz Feneri</h3>
+                        <p class="text-brand-secondary text-sm text-center font-body mt-1">Diğer</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-brand-beige py-12 border-t border-brand-accent/20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="text-center md:text-left">
+                    <img src="assets/balkes-maket-1.png" alt="Balkes Maket" class="h-16 mx-auto md:mx-0 mb-4 opacity-90">
+                    <p class="text-brand-accent text-sm max-w-xs mx-auto md:mx-0 font-body">
+                        El yapımı, organik ve detaylı maket tasarımları. Tutkuyla üretildi.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div class="text-center">
+                    <h4 class="font-heading font-bold text-lg mb-4 text-brand-cream">Hızlı Bağlantılar</h4>
+                    <ul class="space-y-2 font-body text-sm text-brand-accent">
+                        <li><a href="#" class="hover:text-brand-cream transition-colors">Anasayfa</a></li>
+                        <li><a href="#" class="hover:text-brand-cream transition-colors">Gemi Maketleri</a></li>
+                        <li><a href="#" class="hover:text-brand-cream transition-colors">Üretim Aşamaları</a></li>
+                        <li><a href="#" class="hover:text-brand-cream transition-colors">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="text-center md:text-right">
+                    <h4 class="font-heading font-bold text-lg mb-4 text-brand-cream">İletişim</h4>
+                    <p class="text-brand-accent text-sm font-body">info@balkesmaket.com</p>
+                    <p class="text-brand-accent text-sm font-body mt-2">+90 555 123 45 67</p>
+                    <div class="flex justify-center md:justify-end gap-4 mt-4">
+                         <!-- Social Placeholders -->
+                         <a href="#" class="text-brand-accent hover:text-brand-cream transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                         <a href="#" class="text-brand-accent hover:text-brand-cream transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.072 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-brand-accent/10 pt-8 text-center">
+                <p class="text-brand-accent/60 text-xs font-body">
+                    © 2023 Balkes Maket. Tüm hakları saklıdır.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
