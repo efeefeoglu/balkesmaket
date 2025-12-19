@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "title": "Osmanlı Kalyonu",
+    "category": "Gemi Maketleri",
+    "featured": true,
+    "image": null
+  },
+  {
+    "id": 2,
+    "title": "Klasik Otomobil",
+    "category": "Araç Maketleri",
+    "featured": true,
+    "image": null
+  },
+  {
+    "id": 3,
+    "title": "Köy Evi",
+    "category": "Ev Maketleri",
+    "featured": true,
+    "image": null
+  },
+  {
+    "id": 4,
+    "title": "Balıkçı Teknesi",
+    "category": "Gemi Maketleri",
+    "featured": true,
+    "image": null
+  },
+  {
+    "id": 5,
+    "title": "Vosvos",
+    "category": "Araç Maketleri",
+    "featured": true,
+    "image": null
+  },
+  {
+    "id": 6,
+    "title": "Taş Konak",
+    "category": "Ev Maketleri",
+    "featured": true,
+    "image": null
+  },
+  {
+    "id": 7,
+    "title": "Yat Modeli",
+    "category": "Gemi Maketleri",
+    "featured": true,
+    "image": null
+  },
+  {
+    "id": 8,
+    "title": "Motosiklet",
+    "category": "Araç Maketleri",
+    "featured": true,
+    "image": null
+  },
+  {
+    "id": 9,
+    "title": "Deniz Feneri",
+    "category": "Diğer",
+    "featured": true,
+    "image": null
+  },
+  {
+    "id": 10,
+    "title": "Yelkenli Gemi",
+    "category": "Gemi Maketleri",
+    "featured": false,
+    "image": null
+  },
+  {
+    "id": 11,
+    "title": "Taka",
+    "category": "Gemi Maketleri",
+    "featured": false,
+    "image": null
+  },
+  {
+    "id": 12,
+    "title": "Korsan Gemisi",
+    "category": "Gemi Maketleri",
+    "featured": false,
+    "image": null
+  },
+  {
+    "id": 13,
+    "title": "Yolcu Gemisi",
+    "category": "Gemi Maketleri",
+    "featured": false,
+    "image": null
+  },
+  {
+    "id": 14,
+    "title": "Savaş Gemisi",
+    "category": "Gemi Maketleri",
+    "featured": false,
+    "image": null
+  },
+  {
+    "id": 15,
+    "title": "Özel Tasarım Gemi",
+    "category": "Gemi Maketleri",
+    "featured": false,
+    "image": null
+  }
+]
