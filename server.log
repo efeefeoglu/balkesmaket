@@ -1,0 +1,7 @@
+127.0.0.1 - - [19/Dec/2025 12:02:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [19/Dec/2025 12:02:21] "GET /assets/balkes-maket-logo.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/Dec/2025 12:02:21] "GET /assets/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [19/Dec/2025 12:02:21] "GET /assets/js/parallax.js HTTP/1.1" 200 -
+127.0.0.1 - - [19/Dec/2025 12:02:21] "GET /assets/balkes-maket-logo-white.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/Dec/2025 12:02:22] "GET /assets/background.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [19/Dec/2025 12:02:22] "GET /assets/data/products.json HTTP/1.1" 200 -
